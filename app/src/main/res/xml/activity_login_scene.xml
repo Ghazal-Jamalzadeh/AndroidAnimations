@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="500">
+
+        <OnClick motion:targetId="@id/login_register" />
+
+    </Transition>
+
+    <Transition
+        motion:constraintSetStart="@id/end"
+        motion:constraintSetEnd="@+id/start"
+        motion:duration="1000">
+
+        <OnClick motion:targetId="@id/confirm_btn" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bg_rounded_white"
+            android:gravity="center"
+            android:hint="username"
+            android:padding="15dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:alpha="0"
+            motion:layout_constraintBottom_toTopOf="@id/email" />
+
+        <Constraint
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bg_rounded_white"
+            android:gravity="center"
+            android:hint="email"
+            android:padding="15dp"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            motion:layout_constraintBottom_toTopOf="@id/confirm_btn"
+            motion:layout_constraintTop_toBottomOf="@id/avatar" />
+
+        <Constraint
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bg_rounded_white"
+            android:gravity="center"
+            android:hint="password"
+            android:padding="15dp"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            motion:layout_constraintTop_toBottomOf="@id/email" />
+
+
+        <Constraint
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:backgroundTint="@color/ebonyClay"
+            android:padding="15dp"
+            android:text="Confirm"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+
+        <Constraint
+            android:id="@+id/login_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/ebonyClay"
+            android:padding="15dp"
+            android:text="Login / Register"
+            android:alpha="1"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/avatar"/>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/login_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/ebonyClay"
+            android:padding="15dp"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:text="Login / Register"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/avatar"/>
+
+    </ConstraintSet>
+</MotionScene>

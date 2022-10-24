@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+
+        <OnSwipe motion:touchAnchorId="@id/header"
+            motion:dragDirection="dragUp"
+            motion:dragScale="1"
+            motion:moveWhenScrollAtTop="true"
+            motion:onTouchUp="decelerateAndComplete"
+            motion:touchAnchorSide="top"
+
+            />
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+
+        <Constraint
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_top_rounded_ebony"
+            android:padding="25dp"
+            android:text="sample text"
+            android:textColor="@color/white"
+            android:layout_marginTop="150dp"
+            motion:layout_constraintTop_toTopOf="parent"
+             />
+
+        <Constraint
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/ebonyClay"
+            android:justificationMode="inter_word"
+            android:padding="25dp"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/white"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/header" />
+    </ConstraintSet>
+</MotionScene>
